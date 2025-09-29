@@ -1,0 +1,12 @@
+# Core dependencies
+numpy>=1.20.0
+scikit-learn>=1.0.0
+scipy>=1.7.0
+pyyaml>=5.4
+
+# Optional dependencies (uncomment as needed)
+# matplotlib>=3.5.0  # For visualization
+# seaborn>=0.11.0    # For advanced visualization
+# optuna>=3.0.0      # For hyperparameter optimization
+# torch>=1.10.0      # For deep learning models
+# tensorflow>=2.8.0  # For TensorFlow models
