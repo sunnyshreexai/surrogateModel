@@ -11,7 +11,6 @@ SurrogateModel is a production-ready Python package for constructing surrogate m
 ## Key Features
 
 - **Two-Phase Construction**: Systematic approach combining combinatorial testing and active learning
-- **Fully Configurable**: 30+ optional parameters with sensible defaults - no hardcoded values
 - **T-way Testing**: Capture feature interactions systematically using combinatorial testing
 - **Active Learning**: Intelligent query selection using uncertainty and diversity strategies
 - **Counterfactual Generation**: Generate opposite-class examples for improved class balance
