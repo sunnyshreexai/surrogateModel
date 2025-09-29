@@ -176,60 +176,7 @@ config = ConfigPresets.memory_efficient()
 config = ConfigPresets.gpu_optimized()
 ```
 
-## Advanced Usage
 
-### Custom Black-Box Models
-
-```python
-from surrogatemodel.utils import create_black_box_wrapper
-
-# Wrap any model as black-box
-black_box = create_black_box_wrapper(
-    model=your_model,
-    preprocessing=preprocess_fn,    # Optional
-    postprocessing=postprocess_fn   # Optional
-)
-```
-
-### Active Learning Strategies
-
-```python
-from surrogatemodel.active_learning import UncertaintySampler, DiversitySampler
-
-# Use specialized samplers
-uncertainty_sampler = UncertaintySampler(method="entropy")
-diversity_sampler = DiversitySampler(method="max_min")
-```
-
-### Counterfactual Generation
-
-```python
-from surrogatemodel.counterfactual import CounterfactualGenerator
-
-generator = CounterfactualGenerator(
-    method="genetic",      # Use genetic algorithm
-    diversity=0.5,         # Diversity parameter
-    n_counterfactuals=5    # Generate multiple counterfactuals
-)
-
-# Generate diverse counterfactuals
-counterfactuals = generator.generate_diverse_set(
-    instance=test_instance,
-    target_class=1,
-    model=surrogate.surrogate_model,
-    feature_ranges=feature_ranges
-)
-```
-
-### Model Explanation
-
-```python
-# Explain predictions
-explanation = surrogate.explain(test_instance)
-print(f"Prediction: {explanation['prediction']}")
-print(f"Confidence: {explanation['confidence']:.2%}")
-print(f"Feature contributions: {explanation['feature_contributions']}")
-```
 
 ## API Reference
 
@@ -241,55 +188,7 @@ print(f"Feature contributions: {explanation['feature_contributions']}")
 - `ActiveLearner`: Query selection strategies
 - `CounterfactualGenerator`: Counterfactual generation
 
-### Key Methods
 
-```python
-# Construct surrogate model
-results = surrogate.construct(
-    black_box_model=black_box,
-    feature_ranges=ranges,
-    categorical_features=[2, 3],
-    validation_data=(X_val, y_val)
-)
-
-# Make predictions
-predictions = surrogate.predict(X_test)
-probabilities = surrogate.predict_proba(X_test)
-
-# Evaluate performance
-metrics = surrogate.evaluate(
-    X=X_test,
-    y_true=y_test,
-    black_box_model=black_box
-)
-
-# Save/Load model
-surrogate.save("model.pkl")
-loaded_surrogate = SurrogateModel.load("model.pkl")
-```
-
-## Performance Optimization
-
-### GPU Acceleration
-
-```python
-config = SurrogateModelConfig(use_gpu=True)
-```
-
-### Parallel Processing
-
-```python
-config = SurrogateModelConfig(parallel_workers=8)
-```
-
-### Caching
-
-```python
-config = SurrogateModelConfig(
-    cache_interactions=True,
-    memory_efficient=False  # Trade memory for speed
-)
-```
 
 ## License
 
@@ -307,10 +206,6 @@ If you use this software in your research, please cite:
   year={2024}
 }
 ```
-
-## Contributing
-
-Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
 ## Support
 
