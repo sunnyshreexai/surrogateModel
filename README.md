@@ -194,18 +194,6 @@ config = ConfigPresets.gpu_optimized()
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Citation
-
-If you use this software in your research, please cite:
-
-```bibtex
-@inproceedings{shree2024surrogate,
-  title={Constructing Surrogate Models Using Combinatorial Testing and Active Learning},
-  author={Shree, Sunny and Khadka, Krishna and Lei, Yu},
-  booktitle={Proceedings of the International Conference on Software Testing},
-  year={2024}
-}
-```
 
 ## Support
 
